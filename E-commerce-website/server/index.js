@@ -11,8 +11,20 @@ dotenv.config();
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://codsoft-312e.vercel.app',
+    'https://codsoft-pink-chi.vercel.app'
+];
+
 const corsOptions = {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
@@ -20,8 +32,35 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+let cachedConnection = null;
+
+const connectDB = async () => {
+    if (cachedConnection && mongoose.connection.readyState === 1) {
+        return cachedConnection;
+    }
+
+    try {
+        cachedConnection = await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            bufferCommands: false,
+        });
+        console.log("Connected to MongoDB successfully");
+        return cachedConnection;
+    } catch (err) {
+        console.error("MongoDB connection error:", err);
+    }
+};
+
+// Middleware to ensure DB connection for all /api routes
+app.use('/api', async (req, res, next) => {
+    await connectDB();
+    next();
+});
+
 // Stripe Webhook MUST use express.raw() and be placed BEFORE express.json()
 app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+    await connectDB();
     const sig = req.headers['stripe-signature'];
     let event;
 
@@ -94,18 +133,4 @@ app.get('/', (req, res) => {
     res.send(`Server started on Port ${PORT}`);
 });
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO_URI);
-        console.log("Connected to MongoDB successfully");
-    } catch (err) {
-        console.error("MongoDB connection error:", err);
-        // Don't exit in production/serverless, just log
-    }
-};
-
-connectDB();
-
-app.listen(PORT, () => {
-    console.log(`Server is running on Port ${PORT}`);
-});
+export default app;
