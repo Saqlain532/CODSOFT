@@ -35,26 +35,23 @@ app.use(cors(corsOptions));
 let cachedConnection = null;
 
 const connectDB = async () => {
-    if (cachedConnection && mongoose.connection.readyState === 1) {
-        return cachedConnection;
+    if (mongoose.connection.readyState >= 1) {
+        return;
     }
 
     try {
-        cachedConnection = await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            bufferCommands: false,
-        });
+        await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to MongoDB successfully");
-        return cachedConnection;
     } catch (err) {
         console.error("MongoDB connection error:", err);
     }
 };
 
 // Middleware to ensure DB connection for all /api routes
-app.use('/api', async (req, res, next) => {
-    await connectDB();
+app.use(async (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+        await connectDB();
+    }
     next();
 });
 
