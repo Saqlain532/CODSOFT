@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.env
+stripe.exe
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+**/.stripe.exe

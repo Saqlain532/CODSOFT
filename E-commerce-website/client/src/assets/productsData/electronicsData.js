@@ -1,0 +1,12 @@
+export const electronicsData = [
+  { id: 101, categoryId: 1, name: "Noise Cancelling Headphones Pro", description: "Industry-leading active noise cancellation.", price: 199.99, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", rating: 4.8, reviews: 342 },
+  { id: 102, categoryId: 1, name: "Ultra HD Smart TV 55\"", description: "Experience cinematic viewing in your living room.", price: 799.00, image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1", rating: 4.6, reviews: 128 },
+  { id: 103, categoryId: 1, name: "Smartphone X", description: "Latest generation smartphone with advanced camera.", price: 999.00, image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9", rating: 4.9, reviews: 856 },
+  { id: 104, categoryId: 1, name: "Wireless Gaming Mouse", description: "Lag-free performance for competitive gaming.", price: 59.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG4VyR9BglAHpMm5DvfNQG1f95on64c6EeIg&s", rating: 4.5, reviews: 290 },
+  { id: 105, categoryId: 1, name: "Mechanical Keyboard", description: "Tactile switches with customizable RGB lighting.", price: 129.50, image: "https://images.unsplash.com/photo-1595225476474-87563907a212", rating: 4.7, reviews: 415 },
+  { id: 106, categoryId: 1, name: "Smartwatch Series 5", description: "Track your fitness and stay connected on the go.", price: 349.99, image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1", rating: 4.4, reviews: 520 },
+  { id: 107, categoryId: 1, name: "Portable Bluetooth Speaker", description: "Waterproof speaker with 24-hour battery life.", price: 89.99, image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1", rating: 4.8, reviews: 671 },
+  { id: 108, categoryId: 1, name: "4K Action Camera", description: "Capture your adventures in stunning 4K detail.", price: 249.00, image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f", rating: 4.3, reviews: 189 },
+  { id: 109, categoryId: 1, name: "Tablet Pro 11-inch", description: "Powerful tablet for work and entertainment.", price: 699.00, image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0", rating: 4.8, reviews: 932 },
+  { id: 110, categoryId: 1, name: "Wireless Earbuds", description: "Compact earbuds with crystal clear sound.", price: 149.99, image: "https://elver.in/cdn/shop/files/3X_af988af5-683a-47ec-b1aa-e5410bd0e078.png?v=1755252621&width=990", rating: 4.5, reviews: 1024 }
+];

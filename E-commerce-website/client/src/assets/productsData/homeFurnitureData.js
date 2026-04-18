@@ -1,0 +1,12 @@
+export const homeFurnitureData = [
+  { id: 301, categoryId: 3, name: "Modern Velvet Sofa", description: "Luxurious 3-seater sofa with gold accents.", price: 899.00, image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc", rating: 4.8, reviews: 154 },
+  { id: 302, categoryId: 3, name: "Wooden Dining Table", description: "Solid oak table, seats up to 6 people.", price: 450.00, image: "https://m.media-amazon.com/images/I/91Ua8fSidEL._SX679_.jpg", rating: 4.6, reviews: 89 },
+  { id: 303, categoryId: 3, name: "Ergonomic Office Chair", description: "Breathable mesh chair to fix your posture.", price: 199.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwNFIhZc0BBp16ASNixXTZfNvzfqvE25RrsA&s", rating: 4.7, reviews: 320 },
+  { id: 304, categoryId: 3, name: "Minimalist Floor Lamp", description: "Sleek lighting fixture for modern homes.", price: 75.00, image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c", rating: 4.4, reviews: 110 },
+  { id: 305, categoryId: 3, name: "Queen Size Bed Frame", description: "Sturdy platform bed with a tufted headboard.", price: 350.00, image: "https://images.unsplash.com/photo-1505693314120-0d443867891c", rating: 4.8, reviews: 290 },
+  { id: 306, categoryId: 3, name: "Ceramic Coffee Mug", description: "Set of 4 artisan crafted mugs.", price: 35.99, image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d", rating: 4.9, reviews: 54 },
+  { id: 307, categoryId: 3, name: "Non-Stick Cookware Set", description: "10-piece professional kitchen pots and pans.", price: 129.00, image: "https://m.media-amazon.com/images/I/5174O5GNxML._AC_US750_.jpg", rating: 4.6, reviews: 400 },
+  { id: 308, categoryId: 3, name: "Geometric Rug 5x7", description: "Soft, durable area rug to tie the room together.", price: 110.00, image: "https://images.unsplash.com/photo-1534889156217-d643df14f14a", rating: 4.5, reviews: 180 },
+  { id: 309, categoryId: 3, name: "Indoor Potted Plant", description: "Low-maintenance faux monstera plant.", price: 45.00, image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411", rating: 4.7, reviews: 215 },
+  { id: 310, categoryId: 3, name: "Memory Foam Mattress", description: "12-inch cooling gel mattress for deep sleep.", price: 499.00, image: "https://rukminim2.flixcart.com/image/1536/1536/xif0q/bed-mattress/f/x/d/euro-top-double-6-48-75-latex-ortho-foam-comfort-orthopedic-original-imahfsvm2b4kg3rj.jpeg?q=90", rating: 4.8, reviews: 920 }
+];

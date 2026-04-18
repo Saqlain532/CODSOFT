@@ -1,0 +1,12 @@
+export const groceriesData = [
+  { id: 901, categoryId: 9, name: "Organic Avocados (Pack of 4)", description: "Fresh, ripe, and ready to eat Hass avocados.", price: 6.99, image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578", rating: 4.9, reviews: 780 },
+  { id: 902, categoryId: 9, name: "Whole Bean Coffee (1 lb)", description: "Medium dark roast with notes of chocolate.", price: 15.99, image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7", rating: 4.8, reviews: 1450 },
+  { id: 903, categoryId: 9, name: "Extra Virgin Olive Oil", description: "Cold-pressed authentic Italian olive oil.", price: 12.50, image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5", rating: 4.7, reviews: 320 },
+  { id: 904, categoryId: 9, name: "Almond Milk (1 Gallon)", description: "Unsweetened dairy-free alternative.", price: 4.99, image: "https://images.unsplash.com/photo-1563636619-e9143da7973b", rating: 4.6, reviews: 920 },
+  { id: 905, categoryId: 9, name: "Sourdough Bread Loaf", description: "Freshly baked artisan sourdough.", price: 5.50, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtPxvl3flA0DYIfvNaTCkCiBUEXQ6Ks_6oDg&s", rating: 4.8, reviews: 450 },
+  { id: 906, categoryId: 9, name: "Free-Range Large Eggs (Dozen)", description: "Farm fresh eggs for your morning breakfast.", price: 4.25, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNApsaudoOEjjodm8e05G9cqqDz9x1vWoRNQ&s", rating: 4.9, reviews: 610 },
+  { id: 907, categoryId: 9, name: "Honeycrisp Apples (3 lbs)", description: "Sweet, crunchy, and juicy apples.", price: 7.99, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9a3j4SXW09ABR9dxyjCKPClyFl0r48sn2vA&s", rating: 4.7, reviews: 290 },
+  { id: 908, categoryId: 9, name: "Quinoa (2 lbs bag)", description: "Organic white quinoa packed with protein.", price: 9.99, image: "https://m.media-amazon.com/images/I/41-B8kW1G7L._SY300_SX300_QL70_FMwebp_.jpg", rating: 4.5, reviews: 180 },
+  { id: 909, categoryId: 9, name: "Sparkling Water (12-Pack)", description: "Refreshing lemon-lime carbonated water.", price: 6.50, image: "https://m.media-amazon.com/images/I/31auaefUhHL._SY300_SX300_QL70_FMwebp_.jpg", rating: 4.8, reviews: 1020 },
+  { id: 910, categoryId: 9, name: "Premium Cheddar Cheese", description: "Aged for 24 months for an extra sharp bite.", price: 8.99, image: "https://m.media-amazon.com/images/I/41N2gUdjXKL._SY300_SX300_QL70_FMwebp_.jpg", rating: 4.9, reviews: 540 }
+];

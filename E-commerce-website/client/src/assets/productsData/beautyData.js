@@ -1,0 +1,12 @@
+export const beautyData = [
+  { id: 501, categoryId: 5, name: "Hydrating Face Serum", description: "Infused with Hyaluronic Acid for all-day moisture.", price: 34.00, image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be", rating: 4.8, reviews: 512 },
+  { id: 502, categoryId: 5, name: "Matte Liquid Lipstick", description: "Long-lasting, smudge-proof classic red.", price: 18.00, image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa", rating: 4.5, reviews: 420 },
+  { id: 503, categoryId: 5, name: "Organic Botanical Perfume", description: "A fresh, floral scent that lingers.", price: 65.00, image: "https://images.unsplash.com/photo-1594035910387-fea47794261f", rating: 4.7, reviews: 198 },
+  { id: 504, categoryId: 5, name: "Vitamin C Brightening Cream", description: "Evens out skin tone and tackles dark spots.", price: 42.00, image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b", rating: 4.6, reviews: 630 },
+  { id: 505, categoryId: 5, name: "Eyeshadow Palette (Nudes)", description: "12 highly pigmented neutral shades.", price: 28.00, image: "https://europegirl.com/cdn/shop/files/1_dd6053bf-b056-4182-bf46-72981f401adb.jpg?v=1775198331&width=1000", rating: 4.9, reviews: 840 },
+  { id: 506, categoryId: 5, name: "Gentle Foaming Cleanser", description: "Removes makeup without stripping the skin.", price: 20.00, image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571", rating: 4.7, reviews: 315 },
+  { id: 507, categoryId: 5, name: "Argan Hair Oil", description: "Tames frizz and adds incredible shine.", price: 24.50, image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f", rating: 4.8, reviews: 560 },
+  { id: 508, categoryId: 5, name: "Jade Roller Set", description: "Depuffs skin and improves circulation.", price: 15.00, image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRIr7GZSoYRyyotMddL0mS5QewExkJkKylsMuMlw1FkGbPpB6-z_4ydAYipRrFgxepOfO59jSpXXEa-1wQOh7UFPijDb4zZBJnxcYphhfYZvv5Z2y6QhlGdPg", rating: 4.3, reviews: 145 },
+  { id: 509, categoryId: 5, name: "Volumizing Mascara", description: "Clump-free formula for thicker lashes.", price: 22.00, image: "https://distausa.com/cdn/shop/files/71SrjUrVHRL_1024x.jpg?v=1773388602", rating: 4.5, reviews: 720 },
+  { id: 510, categoryId: 5, name: "Spa Bath Bomb Set", description: "6 relaxing aromatherapy bath bombs.", price: 25.00, image: "https://kokorojapanstore.com/cdn/shop/products/ANJ001_994x.jpg?v=1756978811", rating: 4.8, reviews: 290 }
+];

@@ -1,0 +1,12 @@
+export const fashionData = [
+  { id: 201, categoryId: 2, name: "Classic White T-Shirt", description: "Premium cotton blend for everyday comfort.", price: 24.99, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab", rating: 4.5, reviews: 312 },
+  { id: 202, categoryId: 2, name: "Slim Fit Jeans", description: "Timeless denim designed for a perfect fit.", price: 59.99, image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246", rating: 4.6, reviews: 428 },
+  { id: 203, categoryId: 2, name: "Leather Aviator Jacket", description: "Genuine leather jacket with a vintage appeal.", price: 199.00, image: "https://www.saintg.in/cdn/shop/files/olive6_e548a773-ceff-4fa5-8aae-daec60157ab5.jpg?v=1762849135", rating: 4.8, reviews: 156 },
+  { id: 204, categoryId: 2, name: "Summer Floral Dress", description: "Lightweight and breathable summer dress.", price: 45.00, image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1", rating: 4.3, reviews: 89 },
+  { id: 205, categoryId: 2, name: "Running Sneakers", description: "High-performance cushioning for your daily runs.", price: 110.00, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff", rating: 4.9, reviews: 832 },
+  { id: 206, categoryId: 2, name: "Wool Blend Coat", description: "Elegant winter coat to keep you warm and stylish.", price: 150.00, image: "https://m.media-amazon.com/images/I/81Y5G3ufNGL.jpg", rating: 4.7, reviews: 201 },
+  { id: 207, categoryId: 2, name: "Formal Silk Tie", description: "A sleek touch for your formal menswear collection.", price: 29.99, image: "https://static.vecteezy.com/system/resources/thumbnails/072/898/190/small_2x/elegant-white-tie-on-black-fabric-a-symbol-of-formal-occasions-photo.jpg", rating: 4.2, reviews: 54 },
+  { id: 208, categoryId: 2, name: "Classic Sunglasses", description: "UV-protected polarized lenses.", price: 85.00, image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083", rating: 4.6, reviews: 310 },
+  { id: 209, categoryId: 2, name: "Leather Crossbody Bag", description: "Compact and stylish everyday bag.", price: 125.00, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa", rating: 4.8, reviews: 421 },
+  { id: 210, categoryId: 2, name: "Cotton Crew Socks (3-Pack)", description: "Comfortable and breathable daily socks.", price: 15.99, image: "https://images.unsplash.com/photo-1582966772680-860e372bb558", rating: 4.7, reviews: 689 }
+];

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap');
+@import "tailwindcss";
+
+
+
+@theme{
+    /* Background Colors */
+    --color-mbg:#0F172A; /* main background - Rich Dark slate  */
+    --color-cbg:#1E293B;   /*Surface/Card Background  - Lighter Slate*/
+    --color-dbg:#1E293B;    /*borders and dividers - Muted Slate */
+   
+    /* Brand colors used for actions Colors */
+    
+    --color-Primary:#22D3EE; /*Electric Cyan*/
+    --color-Primary-hover:#3B82F6; /* Vibrant Blue */
+    --color-accent:#8B5CF6; /* Neon Violet*/
+
+    /* Text colors */
+   
+    --color-primary-text:#F8FAFC; /* Off-white*/
+    --color-secondary-text:#94A3B8 ; /* Cool Gray*/
+
+    /* --- Fonts --- */
+    --font-sans: "Inter", sans-serif; 
+    --font-display: "Outfit", sans-serif;
+
+}
