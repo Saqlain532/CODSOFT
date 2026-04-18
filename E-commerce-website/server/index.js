@@ -99,10 +99,10 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("Connected to MongoDB successfully");
-        app.listen(PORT, () => {
-            console.log(`Server is runing on Port ${PORT}`);
-        });
     })
     .catch((err) => {
         console.error("MongoDB connection error:", err);
-    });
+});
+app.listen(PORT, () => {
+    console.log(`Server is runing on Port ${PORT}`);
+ });
