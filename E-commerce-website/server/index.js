@@ -94,15 +94,18 @@ app.get('/', (req, res) => {
     res.send(`Server started on Port ${PORT}`);
 });
 
-
-
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to MongoDB successfully");
-    })
-    .catch((err) => {
+    } catch (err) {
         console.error("MongoDB connection error:", err);
-});
+        // Don't exit in production/serverless, just log
+    }
+};
+
+connectDB();
+
 app.listen(PORT, () => {
-    console.log(`Server is runing on Port ${PORT}`);
- });
+    console.log(`Server is running on Port ${PORT}`);
+});
