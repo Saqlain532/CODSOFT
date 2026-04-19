@@ -12,7 +12,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/Project-management-tool/server/app.js" },
-    { "source": "/(.*)", "destination": "/Project-management-tool/client/dist/index.html" }
+    { "source": "/api/(.*)", "destination": "Project-management-tool/server/app.js" },
+    { "source": "/assets/(.*)", "destination": "Project-management-tool/client/dist/assets/$1" },
+    { "source": "/(.*)", "destination": "Project-management-tool/client/dist/index.html" }
   ]
 }
