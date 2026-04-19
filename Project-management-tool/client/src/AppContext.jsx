@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-
+import { API_URL } from './apiConfig';
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -27,8 +27,8 @@ export const AppProvider = ({ children }) => {
 			}
 
 			try {
-				import { API_URL } from './apiConfig';
-// ... existing code ...
+				
+
 				const res = await fetch(`${API_URL}/users/me`, {
 					headers: {
 						'Authorization': `Bearer ${token}`

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import AuthModal from "./AuthModal";
 import { AppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from '../apiConfig';
 
 const Navbar = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,8 +15,6 @@ const Navbar = () => {
 			if (!user) return;
 			try {
 				const token = localStorage.getItem('token');
-				import { API_URL } from '../src/apiConfig';
-// ... existing code ...
 				const res = await fetch(`${API_URL}/projects`, {
 					headers: {
 						'Authorization': `Bearer ${token}`

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { useNavigate } from 'react-router-dom';
+import { API_Under } from '../apiConfig';
 
 const ManagerDashboard = () => {
     const [projects, setProjects] = useState([]);
@@ -11,8 +12,6 @@ const ManagerDashboard = () => {
     const fetchAllProjectStats = async () => {
         try {
             const token = localStorage.getItem('token');
-            import { API_URL } from '../apiConfig';
-// ... existing code ...
             const res = await fetch(`${API_URL}/projects/all-stats`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });

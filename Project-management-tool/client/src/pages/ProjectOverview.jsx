@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../AppContext';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
 import { Pie, Bar } from 'react-chartjs-2';
+import { API_URL } from '../apiConfig';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title);
 
@@ -14,8 +15,6 @@ const ProjectOverview = () => {
         if (!selectedProject) return;
         try {
             const token = localStorage.getItem('token');
-            import { API_URL } from '../apiConfig';
-// ... existing code ...
             const res = await fetch(`${API_URL}/projects/${selectedProject._id}/stats`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
+import { API_URL } from '../apiConfig';
 
 const CreateProjectPage = () => {
 	const [formData, setFormData] = useState({
@@ -27,8 +28,6 @@ const CreateProjectPage = () => {
 
 		try {
 			const token = localStorage.getItem('token');
-			import { API_URL } from '../apiConfig';
-// ... existing code ...
 			const response = await fetch(`${API_URL}/projects`, {
 				method: 'POST',
 				headers: {

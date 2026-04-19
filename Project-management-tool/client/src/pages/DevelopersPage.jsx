@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../AppContext';
+import { API_URL } from '../apiConfig';
 
 const DevelopersPage = () => {
     const [developers, setDevelopers] = useState([]);
@@ -25,8 +26,6 @@ const DevelopersPage = () => {
     const fetchDevelopers = async () => {
         try {
             const token = localStorage.getItem('token');
-            import { API_URL } from '../apiConfig';
-// ... existing code ...
             const res = await fetch(`${API_URL}/users/developers`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });

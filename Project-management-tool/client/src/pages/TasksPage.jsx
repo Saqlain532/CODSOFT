@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../AppContext';
+import { API_URL } from '../apiConfig';
 
 const TasksPage = () => {
     const { selectedProject, user } = useContext(AppContext);
@@ -12,8 +13,6 @@ const TasksPage = () => {
         if (!selectedProject) return;
         try {
             const token = localStorage.getItem('token');
-            import { API_URL } from '../apiConfig';
-// ... existing code ...
             const res = await fetch(`${API_URL}/tasks/project/${selectedProject._id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });

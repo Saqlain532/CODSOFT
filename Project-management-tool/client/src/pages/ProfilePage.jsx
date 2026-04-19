@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../AppContext';
+import { API_URL } from '../apiConfig';
 
 const ProfilePage = () => {
     const { user, setUser } = useContext(AppContext);
@@ -24,8 +25,6 @@ const ProfilePage = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            import { API_URL } from '../apiConfig';
-// ... existing code ...
             const res = await fetch(`${API_URL}/users/update-profile`, {
                 method: 'PATCH',
                 headers: {
