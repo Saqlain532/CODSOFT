@@ -112,11 +112,11 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu */}
-            <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-cbg py-4 flex-col items-start gap-2 px-5 text-sm md:hidden text-primary-text`}>
+            <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-cbg py-4 flex-col items-start gap-2 px-5 text-sm md:hidden text-primary-text z-50`}>
                 <a href="#" className="block">Home</a>
                 <a href="#" className="block">About</a>
                 <a href="#" className="block">Contact</a>
-                <button className="cursor-pointer px-6 py-2 mt-2 bg-dbg hover:cbg transition text-primarytext rounded-full text-sm">
+                <button className="cursor-pointer px-6 py-2 mt-2 bg-cyan-900 hover:cbg transition text-primarytext rounded-full text-sm">
                     Login
                 </button>
             </div>
