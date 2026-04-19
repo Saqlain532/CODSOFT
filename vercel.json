@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Project-management-tool/server/app.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "Project-management-tool/client/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/Project-management-tool/server/app.js" },
+    { "source": "/(.*)", "destination": "/Project-management-tool/client/dist/index.html" }
+  ]
+}
