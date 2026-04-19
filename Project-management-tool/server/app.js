@@ -11,7 +11,7 @@ import userRoutes from './routes/userRoutes.js';
 dotenv.config();
 
 // Connect to Database
-connectDB();
+await connectDB();
 
 const app = express();
 
@@ -38,6 +38,12 @@ app.get('/', (req, res) => {
   res.send(`Server is listening on port ${PORT}!`);
 });
 
-app.listen(PORT , ()=>{
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-})
+  });
+}
+
+// Export for Vercel serverless
+export default app;
