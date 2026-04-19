@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { useNavigate } from 'react-router-dom';
-import { API_Under } from '../apiConfig';
+import { API_URL } from '../apiConfig';
 
 const ManagerDashboard = () => {
     const [projects, setProjects] = useState([]);
