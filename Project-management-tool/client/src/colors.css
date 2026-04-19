@@ -1,0 +1,23 @@
+:root[data-theme='dark'] {
+	--primary-bg: #0a0a0a;
+	--secondary-bg: #111111;
+	--accent-color: #00f5d4;
+	--text-primary: #f8fafc;
+	--text-secondary: #94a3b8;
+	--border-color: #1e293b;
+	--card-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='light'] {
+	--primary-bg: #f8fafc;
+	--secondary-bg: #ffffff;
+	--accent-color: #0d9488; /* Slightly deeper teal for better contrast in light mode */
+	--text-primary: #0f172a;
+	--text-secondary: #475569; /* Darker secondary text for readability */
+	--border-color: #e2e8f0;
+	--card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+:root {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}

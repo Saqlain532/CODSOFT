@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "./colors.css";
+
+@theme {
+	--color-primary-bg: var(--primary-bg);
+	--color-secondary-bg: var(--secondary-bg);
+	--color-accent-color: var(--accent-color);
+	--color-text-primary: var(--text-primary);
+	--color-text-secondary: var(--text-secondary);
+	--color-border-color: var(--border-color);
+	--card-shadow: var(--card-shadow);
+}
+
+@layer base {
+  body {
+    @apply bg-primary-bg text-text-primary;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border-color rounded-full hover:bg-accent-color/50 transition-colors;
+  }
+}
+
+
+
