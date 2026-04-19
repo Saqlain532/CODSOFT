@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ManagerDashboard from "./pages/ManagerDashboard";
@@ -13,6 +13,7 @@ import { AppContext } from "./AppContext";
 
 const App = () => {
 	const { user, loading } = useContext(AppContext);
+	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	if (loading) {
 		return (
@@ -33,9 +34,9 @@ const App = () => {
 
 	return (
 		<div className="flex h-screen overflow-hidden bg-primary-bg">
-			<Sidebar />
+			<Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 			<div className="flex flex-1 flex-col overflow-hidden">
-				<Navbar />
+				<Navbar onSidebarToggle={() => setSidebarOpen(!sidebarOpen)} />
 				<main className="flex-1 overflow-y-auto p-8">
 					<Routes>
 						<Route path="/" element={user.role === 'manager' ? <ManagerDashboard /> : <HomePage />} />

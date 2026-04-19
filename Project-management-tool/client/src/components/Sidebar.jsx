@@ -3,8 +3,7 @@ import { useLocation, Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import { AppContext } from "../AppContext";
 
-const Sidebar = () => {
-	const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({ isOpen, setIsOpen }) => {
 	const [isCollapsed, setIsCollapsed] = useState(false);
 	const { user, setUser } = useContext(AppContext);
 	const location = useLocation();
@@ -37,27 +36,16 @@ const Sidebar = () => {
 
 	return (
 		<>
-			<button
-				className="fixed top-4 left-4 z-40 md:hidden"
-				onClick={() => setIsOpen(!isOpen)}
-			>
-				<svg
-					className="h-6 w-6 text-text-primary"
-					fill="none"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						d="M4 6h16M4 12h16m-7 6h7"
-					></path>
-				</svg>
-			</button>
+			{/* Background Overlay for mobile when sidebar is open */}
+			{isOpen && (
+				<div 
+					className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
+					onClick={() => setIsOpen(false)}
+				></div>
+			)}
+
 			<aside
-				className={`fixed top-0 left-0 z-30 flex h-screen flex-col border-r border-border-color bg-secondary-bg transition-all duration-300 ease-in-out md:relative md:translate-x-0 ${
+				className={`fixed top-0 left-0 z-40 flex h-screen flex-col border-r border-border-color bg-secondary-bg transition-all duration-300 ease-in-out md:relative md:translate-x-0 ${
 					isOpen ? "translate-x-0" : "-translate-x-full"
 				} ${isCollapsed ? "w-20 px-3" : "w-72 px-6"} py-8`}
 			>
@@ -71,13 +59,6 @@ const Sidebar = () => {
 					</svg>
 				</button>
 
-				{/* Background Overlay for mobile when sidebar is open */}
-				{isOpen && (
-					<div 
-						className="fixed inset-0 z-[-1] bg-black/60 backdrop-blur-sm md:hidden"
-						onClick={() => setIsOpen(false)}
-					></div>
-				)}
 				<div className={`mb-10 flex flex-col transition-all ${isCollapsed ? "items-center px-0" : "items-start px-4"}`}>
 					<div className={`group relative mb-6 flex items-center justify-center overflow-hidden rounded-xl bg-primary-bg shadow-sm border border-border-color/50 transition-all duration-300 hover:border-accent-color/30 ${isCollapsed ? "h-11 w-11" : "h-12 w-12"}`}>
 						<img 
@@ -105,12 +86,13 @@ const Sidebar = () => {
 					)}
 				</div>	
 
-				<nav className="flex-1 overflow-hidden">
+				<nav className="flex-1 overflow-y-auto">
 					<ul className="space-y-2">
 						{navItems.map((item) => (
 							<li key={item.href}>
 								<Link
 									to={item.href}
+									onClick={() => setIsOpen(false)}
 									title={isCollapsed ? item.label : ""}
 									className={`group relative flex items-center overflow-hidden rounded-xl py-2 text-sm font-semibold transition-all duration-300 ${isCollapsed ? "justify-center px-0" : "gap-4 px-4"} ${
 										isActive(item.href)
@@ -135,33 +117,33 @@ const Sidebar = () => {
 					</ul>
 				</nav>
 
-				{/* User Profile Section */}
-				<div className={`mt-auto pt-6 border-t border-border-color/50 transition-all ${isCollapsed ? "items-center px-0" : "px-2"}`}>
-					{isAuthenticated ? (
-						<Link 
-							to="/profile" 
-							className={`group flex items-center gap-3 rounded-xl p-2 transition-all hover:bg-primary-bg ${isCollapsed ? "justify-center" : ""}`}
-						>
-							<div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-color/10 font-bold text-accent-color border border-accent-color/20 transition-all group-hover:bg-accent-color group-hover:text-primary-bg">
-								{user?.name?.charAt(0).toUpperCase()}
-								<div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-secondary-bg bg-emerald-500"></div>
-							</div>
-							{!isCollapsed && (
-								<div className="flex flex-col overflow-hidden text-left">
-									<span className="truncate text-sm font-bold text-text-primary group-hover:text-accent-color transition-colors">
-										{user.name}
-									</span>
-									<span className="truncate text-[10px] font-medium uppercase tracking-wider text-text-secondary/60">
-										{user.role}
-									</span>
-								</div>
-							)}
-						</Link>
-					) : (
-						<div className={`flex flex-col gap-2 ${isCollapsed ? "items-center" : ""}`}>
-							<div className="h-10 w-10 rounded-lg bg-border-color/20 animate-pulse"></div>
+			{/* User Profile Section */}
+			<div className={`mt-auto pt-6 border-t border-border-color/50 transition-all ${isCollapsed ? "items-center px-0" : "px-2"}`}>
+				{isAuthenticated ? (
+					<Link 
+						to="/profile" 
+						className={`group flex items-center gap-3 rounded-xl p-2 transition-all hover:bg-primary-bg ${isCollapsed ? "justify-center" : ""}`}
+					>
+						<div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-color/10 font-bold text-accent-color border border-accent-color/20 transition-all group-hover:bg-accent-color group-hover:text-primary-bg">
+							{user?.name?.charAt(0).toUpperCase()}
+							<div className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-secondary-bg bg-emerald-500"></div>
 						</div>
-					)}
+						{!isCollapsed && (
+							<div className="flex flex-col overflow-hidden text-left">
+								<span className="truncate text-sm font-bold text-text-primary group-hover:text-accent-color transition-colors">
+									{user.name}
+								</span>
+								<span className="truncate text-[10px] font-medium uppercase tracking-wider text-text-secondary/60">
+									{user.role}
+								</span>
+							</div>
+						)}
+					</Link>
+				) : (
+					<div className={`flex flex-col gap-2 ${isCollapsed ? "items-center" : ""}`}>
+						<div className="h-10 w-10 rounded-lg bg-border-color/20 animate-pulse"></div>
+					</div>
+				)}
 					
 					{isAuthenticated && (
 						<button 
