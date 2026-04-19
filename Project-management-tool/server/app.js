@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -17,6 +18,14 @@ const app = express();
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+
+// Add a test health route
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'server is running', 
+        database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected' 
+    });
+});
 
 // Routes
 app.use('/api/projects', projectRoutes);
