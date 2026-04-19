@@ -1,9 +1,6 @@
 {
-  "rewrite": [
-    { "source": "/api/:path*", "destination": "https://codsoft-r96j.vercel.app/api/:path*" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "api/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
