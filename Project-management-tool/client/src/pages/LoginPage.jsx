@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import { API_URL } from '../apiConfig';
 
 const LoginPage = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -16,7 +17,7 @@ const LoginPage = () => {
         e.preventDefault();
         setError('');
         
-        import { API_URL } from '../apiConfig';
+       
 // ... existing code ...
         const endpoint = isLogin ? `${API_URL}/users/login` : `${API_URL}/users/signup`;
         const body = isLogin ? { email, password } : { name, email, password, role };
