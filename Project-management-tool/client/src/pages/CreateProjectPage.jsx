@@ -27,7 +27,9 @@ const CreateProjectPage = () => {
 
 		try {
 			const token = localStorage.getItem('token');
-			const response = await fetch('/api/projects', {
+			import { API_URL } from '../apiConfig';
+// ... existing code ...
+			const response = await fetch(`${API_URL}/projects`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

@@ -16,7 +16,9 @@ const LoginPage = () => {
         e.preventDefault();
         setError('');
         
-        const endpoint = isLogin ? '/api/users/login' : '/api/users/signup';
+        import { API_URL } from '../apiConfig';
+// ... existing code ...
+        const endpoint = isLogin ? `${API_URL}/users/login` : `${API_URL}/users/signup`;
         const body = isLogin ? { email, password } : { name, email, password, role };
 
         try {

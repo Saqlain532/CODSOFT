@@ -14,7 +14,9 @@ const Navbar = () => {
 			if (!user) return;
 			try {
 				const token = localStorage.getItem('token');
-				const res = await fetch('/api/projects', {
+				import { API_URL } from '../src/apiConfig';
+// ... existing code ...
+				const res = await fetch(`${API_URL}/projects`, {
 					headers: {
 						'Authorization': `Bearer ${token}`
 					}

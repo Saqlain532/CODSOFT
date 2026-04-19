@@ -12,7 +12,9 @@ const TasksPage = () => {
         if (!selectedProject) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/tasks/project/${selectedProject._id}`, {
+            import { API_URL } from '../apiConfig';
+// ... existing code ...
+            const res = await fetch(`${API_URL}/tasks/project/${selectedProject._id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -29,7 +31,7 @@ const TasksPage = () => {
     const handleUpdateStatus = async (newStatus) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/tasks/${selectedTask._id}/status`, {
+                        const res = await fetch(`${API_URL}/tasks/${selectedTask._id}/status`, {
                 method: 'PATCH',
                 headers: { 
                     'Content-Type': 'application/json',

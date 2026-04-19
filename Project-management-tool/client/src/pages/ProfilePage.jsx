@@ -24,7 +24,9 @@ const ProfilePage = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/users/update-profile', {
+            import { API_URL } from '../apiConfig';
+// ... existing code ...
+            const res = await fetch(`${API_URL}/users/update-profile`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

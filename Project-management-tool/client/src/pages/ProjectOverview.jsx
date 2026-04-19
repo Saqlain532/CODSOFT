@@ -14,7 +14,9 @@ const ProjectOverview = () => {
         if (!selectedProject) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/projects/${selectedProject._id}/stats`, {
+            import { API_URL } from '../apiConfig';
+// ... existing code ...
+            const res = await fetch(`${API_URL}/projects/${selectedProject._id}/stats`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();

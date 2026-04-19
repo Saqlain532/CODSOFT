@@ -27,7 +27,9 @@ export const AppProvider = ({ children }) => {
 			}
 
 			try {
-				const res = await fetch('/api/users/me', {
+				import { API_URL } from './apiConfig';
+// ... existing code ...
+				const res = await fetch(`${API_URL}/users/me`, {
 					headers: {
 						'Authorization': `Bearer ${token}`
 					}

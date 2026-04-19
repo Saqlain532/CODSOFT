@@ -25,7 +25,9 @@ const DevelopersPage = () => {
     const fetchDevelopers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/users/developers', {
+            import { API_URL } from '../apiConfig';
+// ... existing code ...
+            const res = await fetch(`${API_URL}/users/developers`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -52,7 +54,7 @@ const DevelopersPage = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/tasks', {
+                        const res = await fetch(`${API_URL}/tasks`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -191,7 +193,7 @@ const DevelopersPage = () => {
                                                             e.stopPropagation();
                                                             const token = localStorage.getItem('token');
                                                             try {
-                                                                const res = await fetch(`/api/tasks/${task._id}/status`, {
+                                                                                                                                const res = await fetch(`${API_URL}/tasks/${task._id}/status`, {
                                                                     method: 'PATCH',
                                                                     headers: { 
                                                                         'Content-Type': 'application/json',
