@@ -109,14 +109,14 @@ const Sidebar = () => {
 					<ul className="space-y-2">
 						{navItems.map((item) => (
 							<li key={item.href}>
-								<a
+								<Link
+									to={item.href}
+									title={isCollapsed ? item.label : ""}
 									className={`group relative flex items-center overflow-hidden rounded-xl py-2 text-sm font-semibold transition-all duration-300 ${isCollapsed ? "justify-center px-0" : "gap-4 px-4"} ${
 										isActive(item.href)
 											? "bg-primary-bg text-accent-color shadow-sm"
 											: "text-text-secondary hover:bg-primary-bg/50 hover:text-text-primary"
 									}`}
-									href={item.href}
-									title={isCollapsed ? item.label : ""}
 								>
 									{isActive(item.href) && !isCollapsed && (
 										<div className="absolute left-0 h-4 w-1 rounded-r-full bg-accent-color"></div>
@@ -129,7 +129,7 @@ const Sidebar = () => {
 										} rounded-full`}
 									/>
 									{!isCollapsed && <span>{item.label}</span>}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
