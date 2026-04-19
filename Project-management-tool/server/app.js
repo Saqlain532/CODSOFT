@@ -39,8 +39,8 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/users', userRoutes);
 
-// SPA fallback - serve index.html for all unmatched routes
-app.get('*', (req, res) => {
+// SPA fallback - serve index.html for all unmatched routes (Express 5 syntax)
+app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
